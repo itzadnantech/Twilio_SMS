@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SentSMS;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/// load sms view
+Route::get('/sms', function () {
+    return view('SentSMS');
+});
+
+Route::post('/sms',[SentSMS::class,'sent_message']);
+
+
+ 
